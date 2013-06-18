@@ -1,0 +1,283 @@
+﻿@import "Bootstrap/variables.less";
+@import "Bootstrap/mixins.less";
+
+@borderColor: #ddd;
+@hPadding: 8px;
+@vPadding: 4px;
+@highlightColor: @warningBackground;
+@darkBorderColor: #bbb;
+@gridBackgroundColor: #efefef;
+
+.ui-jqgrid {
+	font-size: @baseFontSize;
+	border-color: @borderColor;
+}
+
+.ui-jqgrid .ui-jqgrid-btable .row-type-group { cursor: pointer; }
+.ui-jqgrid .ui-jqgrid-btable .row-type-item { cursor: pointer; }
+.ui-jqgrid .ui-jqgrid-btable .row-type-instance { cursor: pointer; }
+.ui-jqgrid .ui-jqgrid-resize-ltr { margin-right: -@hPadding; margin-left: -4px; margin-top: -4px; }
+.ui-jqgrid tr.jqgrow td {border-bottom-color: @borderColor;}
+.ui-jqgrid tr.jqgroup td {border-bottom-color: @borderColor;}
+.ui-jqgrid tr.jqfoot td {border-bottom-color: @borderColor}
+.ui-jqgrid tr.ui-row-ltr td {border-right-color: @borderColor;}
+.ui-jqgrid tr.ui-row-rtl td {border-left-color: @borderColor}
+.ui-jqgrid .ui-jqgrid-htable, .ui-jqgrid .ui-jqgrid-btable {
+	background-color: #fff;
+
+	th div { text-align: left }
+	// Cells
+	th,
+	td {
+		line-height: @baseLineHeight;
+		text-align: left;
+		border-color: #d9d9d9;
+	}
+	th {
+		font-weight: bold;
+	}
+	
+	border-collapse: separate;
+	
+}
+
+.ui-jqgrid-htable th {
+	border-bottom: 1px solid @borderColor;
+}
+
+.ui-jqgrid .ui-jqgrid-htable .jqg-first-row-header th {
+	height: 0px;
+	line-height: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.ui-jqgrid {
+	.ui-jqgrid-btable tr, .ui-jqgrid-htable tr {
+		th,
+		td {
+			padding: @vPadding @hPadding;
+			/*padding: 4px 5px;*/
+		  }
+		}
+	}
+	
+	.ui-jqgrid-btable, .ui-jqgrid-htable {
+		border: 1px solid @borderColor;
+		
+	  
+		// Prevent a double border
+		tbody:first-child tr:first-child td {
+			border-top: 0;
+		}
+		
+}
+
+.ui-jqgrid-btable .jqgfirstrow td {
+	border-color: @borderColor;
+}
+
+.ui-jqgrid-btable {
+	border-width: 0;
+	td {background-color: #fff;}
+}
+
+.ui-jqgrid-htable {
+	border: 1px solid #ddd;
+	border-width: 1px 0 1px 0;
+}
+
+.ui-jqgrid .ui-jqgrid-htable th {
+	background-color: #efefef;
+	border-right: 1px solid #ddd;
+}
+
+.ui-jqgrid .ui-jqgrid-btable .jqgfirstrow td {
+	height: 0;
+	padding: 0 @hPadding;
+}
+
+#takeoff_grid_container {
+	-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .15);
+	-moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .15);
+	box-shadow: inset 0 0 10px rgba(0, 0, 0, .15);
+	background-color: @gridBackgroundColor;
+}
+
+/* row types */
+.row-type-group td {
+	background-color: #f5f5f5;
+}
+
+.row-type-detail td {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 11px;
+	&[aria-describedby="TakeoffGrid_AssembleName"] {
+		padding-top: 0;
+		padding-bottom: 0;
+		> span {
+			padding-top: 2px;
+			padding-bottom: 2px;
+		}
+	}
+	input[type="checkbox"] {
+		display: none;
+	}
+}
+
+/* property types */
+.ui-jqgrid tr.row-type-item, .ui-jqgrid tr.row-type-group {
+	.instance-prop {
+		font-weight: bold;
+	}
+	.type-prop {
+		
+	}
+}
+
+.row-type-instance {
+	.instance-prop {
+		
+	}
+	.type-prop {
+		color: #999;
+	}
+}
+
+/* row selection */
+.sel-yes {
+	td {background-color: @highlightColor;}
+	&.current-row td {
+		background-color: desaturate(darken(@highlightColor, 4%), 2%);
+	}
+}
+
+/* variance */
+.ui-jqgrid-view .variance-positive {
+	color: #468847;
+}
+.ui-jqgrid-view .variance-negative {
+	color: #B94A48;
+}
+
+.ui-jqgrid-view .sel-yes td {
+	&.variance-positive {
+		background-color: #468847;
+		color: #fff;
+	}
+	&.variance-negative {
+		background-color: #B94A48;
+		color: #fff;
+	}
+}
+
+.version-comparison .ui-widget-content {
+	[aria-describedby=TakeoffGrid_Variance], [aria-describedby=TakeoffGrid_TotalCost] {
+		font-weight: bold;
+	}
+}
+
+
+/* expand/collapse triangle */
+.ui-icon {
+	width: 16px;
+	height: 16px;
+	background-image: url("Grid/Images/ui-icons_222222_256x240.png");
+}
+
+.ui-icon-triangle-1-e { background-position: -32px -16px; }
+.ui-icon-triangle-1-s { background-position: -64px -16px; }
+
+/* sorting icons */
+/*
+ui-grid-ico-sort ui-icon-desc ui-icon ui-icon-triangle-1-s ui-sort-ltr ui-state-disabled
+ui-grid-ico-sort ui-icon-asc ui-icon ui-icon-triangle-1-n ui-sort-ltr
+*/
+.ui-grid-ico-sort {
+	&.ui-icon-asc, &.ui-icon-desc { margin-top: 2px; }
+	&.ui-icon-triangle-1-n { background-position: 0 -16px; }
+	&.ui-icon-triangle-1-s { background-position: -65px -16px; }
+	&.ui-state-disabled {
+		display: none;
+	}
+}
+
+.row-type-instance {
+	.ui-icon {
+		//background: transparent none 2px 3px no-repeat;
+	}
+}
+
+.ui-jqgrid .row-type-detail {
+	.ui-icon {
+		background: transparent none 2px 3px no-repeat;
+	}
+	&.active-takeoff-quantity td {
+		font-weight: bold;
+	}
+}
+
+/* checkbox states */
+.fake-checkbox {
+	display: inline-block;
+	height: 13px;
+	width: 13px;
+	margin-top: 5px;
+	background: transparent url(../images/sprites/checkbox-states-default.png) 0 0 no-repeat;
+}
+
+.sel-yes .fake-checkbox {
+	background-position: -16px 0;
+}
+
+.sel-partial .fake-checkbox {
+	background-position: -32px 0;
+}
+
+.row-type-detail .fake-checkbox {
+	display: none;
+}
+
+.bottom-toolbar {
+	.gradientBar(#efefef, #ddd);
+	.box-shadow(-1px 0 1px rgba(0, 0, 0, .45));
+	border-top: 1px solid #bbb;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 21px;
+	padding: 4px 6px;
+	.transition(all .1s ease-in);
+}
+
+/* stuff we don't need */
+.ui-icon-radio-off {
+	background: none;
+}
+
+.ui-jqgrid-pager,
+.ui-jqgrid .loading {display: none !important;}
+
+/* touch-specific */
+.touch .ui-jqgrid-resize {
+	display: inline-block;
+	background: none;
+	width: 20px;
+}
+
+/* grid selection header */
+.ui-jqgrid-view .selection-toggle{
+	text-align: center;
+	vertical-align: middle;
+}
+
+/* darker grouping of columns */
+.grouped-columns {
+	#TakeoffGrid_AssembleName, 
+	[aria-describedby="TakeoffGrid_AssembleName"],
+	.group-edge {
+		border-right-color: @darkBorderColor !important;
+	}
+}

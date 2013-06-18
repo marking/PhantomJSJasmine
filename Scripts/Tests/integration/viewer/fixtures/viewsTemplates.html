@@ -1,0 +1,29 @@
+﻿<script data-namespace="views.listItem" type="text/template">
+    <li style="position: relative;" data-mode="normal">
+        <div data-for-mode="edit" class="pvs phs">
+            <form>
+                <div class="controls control-group mbn">
+                    <input type="text" class="input-full-width mbs" name="Name" value="{{Name}}" data-val="true" data-val-required="Name cannot be blank" />
+                    <span class="field-validation-valid help-block mtn" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                </div>
+                <div>
+                    <button class="btn btn-primary btn-small">Save</button>
+                    <button class="btn btn-small btn-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <a href="#" data-id="{{ Id }}" class="model-view" data-for-mode="normal">
+            {{#if ShowDelete}}
+                <div class="slide-menu slide-menu-right">
+                    <span class="trigger"><i class="icon-wrench icon-white"></i></span>
+                    <ul class="menu-items">
+                        <li title="Delete" data-action="delete" {{#if showDelete}} {{else}}class="disabled"{{/if}}><i class="icon-remove icon-white mrs"></i></li>
+                        <li title="Rename" data-action="edit"><i class="icon-pencil icon-white mrs"></i></li>
+                        <li title="Update" data-action="update"><i class="icon-repeat icon-white mrs"></i></li>
+                    </ul>
+                </div>
+            {{/if}}
+            <span class="view-name">{{ Name }}</span>
+        </a>
+    </li>
+</script>

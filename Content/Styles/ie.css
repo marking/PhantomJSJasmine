@@ -1,0 +1,20 @@
+.deactivated {
+  zoom: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
+}
+.incognito.control-group .controls {
+  margin-right: 22px;
+}
+.incognito.control-group {
+  position: relative;
+}
+.incognito.control-group .nullify {
+  position: absolute;
+  top: 0;
+  right: 3%;
+  margin-top: 6px;
+}
+.single-version [aria-describedby="TakeoffGrid_Name"] .cell-wrapper:hover {
+  background-position: right 0;
+}

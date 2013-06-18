@@ -1,0 +1,126 @@
+.guidely-number {
+    background: url(../images/tours/guidely-number.png) no-repeat 0 0;
+    width: 45px;
+    height: 45px;	
+    display: none;	
+    position: absolute;
+    cursor: pointer;	
+    z-index: 10002;
+}
+
+    .guidely-number span {
+        width: 43px;
+        height: 43px;
+        font-family: arial, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        color: #FFF;
+        text-align: center;
+        display: block;
+        line-height: 44px;
+    }
+
+.guidely-guide {
+    background: #FFF;
+    font-size: 13px;
+    width: 400px;
+    display: none;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border-radius:6px;
+    -webkit-box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow:0 3px 7px rgba(0, 0, 0, 0.3);
+    
+    z-index: 10001;
+}
+
+    .guidely-guide h3 {
+        padding: 9px 15px 5px 30px;
+        margin: -15px -15px 12px -30px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .guidely-guide-pad {
+        padding: 15px 15px 12px 30px;
+        margin-bottom: 12px;
+    }
+    
+    .guidely-anchor-right .guidely-guide-pad { padding: 15px 30px 12px 15px; }
+    .guidely-anchor-right h3 {
+        padding: 9px 30px 5px 15px;
+        margin: -15px -30px 12px -15px;
+    }
+
+    .guidely-anchor-right .guidely-close-trigger { right: 30px; }
+
+.guidely-popup 
+{
+    color: #444;
+    display:block;
+    padding: 0;
+    background: #fff;
+    
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+
+
+
+
+.guidely-overlay 
+{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background-color: #000;
+    z-index: 10000;
+    
+    filter: alpha(opacity=30);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=30);
+    -moz-opacity: 0.30;
+    opacity:0.30;
+}
+
+.guidely-start-trigger {
+    display: none !important;
+    background: #444;
+    background: rgba(0,0,0,.6);
+    text-decoration: none;
+    color: #FFF;
+    cursor: pointer;
+    padding: 4px 10px 4px 12px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    z-index: 9999;
+    
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.guidely-close-trigger {
+    position: absolute;
+    right: 7px;
+    top: 9px;
+}
+
+#guide-welcome { width: 500px; }
+
+#guide-welcome .guidely-guide-pad { padding: 15px 15px 12px 15px; }
+#guide-welcome h3 { margin-left: -15px; padding-left: 15px; }
+
+.guidely-guide .fancy-img {
+    .border-radius(6px);
+    .box-shadow(0 0 10px rgba(0, 0, 0, .2));
+	&.light-fancy-img {
+		.box-shadow(0 0 4px rgba(0, 0, 0, .4));
+	}
+}

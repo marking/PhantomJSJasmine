@@ -1,0 +1,74 @@
+﻿<script data-namespace="details.field" type="text/template">
+    <div class="phm incognito control-group">
+        <div class="nullify"><span class="close">&times;</span></div>
+        <label for="{{name}}">{{label}}</label>
+        <div class="controls">
+            <div class="keep-multiple-values-control"><a href="#" class="keep-multiple-values-link">keep multiple values</a></div>
+            <span class="field-validation-valid help-block" data-valmsg-for="{{name}}" data-valmsg-replace="true"></span>
+            <a href="#" class="keep-multiple-values-message" data-id="{{name}}">&lt;Multiple Values&gt;</a>
+            <a href="#" class="incognito-empty-message">{{emptyMessage}}</a>
+        </div>
+    </div>
+</script>
+
+<script data-namespace="details.input.plain" type="text/template">
+    <input type="text" class="input-full-width incognito-field" name="{{name}}" value="{{value}}" />
+</script>
+
+<script data-namespace="details.input.typeAhead" type="text/template">
+    <input type="text" class="input-full-width incognito-field" data-provide="typeahead" value="{{value}}" />
+</script>
+
+<script data-namespace="details.input.textarea" type="text/template">
+    <textarea class="input-full-width incognito-field">{{value}}</textarea>
+</script>
+
+<script data-namespace="details.input.assemblyCodeChooser" type="text/template">
+    <li>
+        <a href="#" data-id="{{id}}" title="{{id}} {{name}}" class="selector-item item-name">
+            <strong>{{id}}</strong> {{name}}
+        </a>
+    </li>
+</script>
+
+<script data-namespace="details.frame" type="text/template">
+    <div class="chunky-header phm pvs clearfix">
+        <span id="DetailsCloseButton" class="close-details close mtxs">&times;</span>
+        <div class="pull-left">
+            <a id="DetailsSaveButton" href="#" class="btn btn-primary save-changes disabled" data-loading-text="Saving&hellip;">Save</a>
+            <a id="DetailsDiscardButton" href="#" class="btn discard-changes disabled">Discard Changes</a>
+        </div>
+    </div>
+    <div class="pbs details-body">
+        <div id="DetailsErrorPanel" class="flush-alert alert-error hide no-rounding pvs phm">Cannot save your changes. Please fix the problems below.</div>
+        <h3 class="mvs phm details-name">{{Title}}</h3>
+        <div>
+            <form class="form-horizontal form-compact">
+                {{#if instance}}
+                    <div class="phm incognito control-group">
+                        <label for="instanceID">{{IdLabel}}</label>
+                        <div class="controls">
+                            <div class="read-only-control">{{DisplayId}}</div>
+                        </div>
+                    </div>
+                {{/if}}
+                <fieldset></fieldset>
+            </form>
+        </div>
+    </div>
+    <div id="DetailsMessagePanel" class="bottom-message alert pvs phm"></div>
+</script>
+
+<script data-namespace="details.empty" type="text/template">
+    <div class="chunky-header phm pvs clearfix"><span class="close close-details mtxs">&times;</span></div>
+    <div class="phm pvs details-body">
+        <div class="empty-message">{{ emptyMessage }}</div>
+    </div>
+</script>
+
+<script data-namespace="details.loadMask" type="text/template">
+    <div class="load-mask">
+        <div class="mask-color"></div>
+        {{#if message}}<div class="load-mask-message">{{ message }}</div>{{else}}<div class="load-mask-message">Loading&hellip;</div>{{/if}}
+    </div>
+</script>

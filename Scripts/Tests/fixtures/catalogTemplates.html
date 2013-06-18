@@ -1,0 +1,57 @@
+﻿<script data-namespace="catalog.estimateWindow" type="text/template">
+    <div id="estimate_window_content">
+        <div id="estimate_window_content_instructions" style="min-height: 200px">
+            <p>
+                Quickly create an estimate for your project by applying Unit Costs based on the Assembly Codes specified in the model. 
+                Before creating an estimate, make sure Assembly Codes and Unit Costs are setup correctly in the <a href="#Settings/Codes" id="estimate_window_project_settings">project settings</a> and that Assembly Codes have been specified in the model.
+            </p>
+            <p>
+                How would you like to apply costs to version <span id="estimate_window_version_name">{{name}}</span>?
+            </p>
+            <p>
+                <label class="radio">
+                    <input type="radio" name="EstimateType" value="fill" checked="checked"/>
+                        <b>Fill in the Gaps</b>  Fill in unit costs where non exists
+                </label>
+                <label class="radio">
+                    <input type="radio" name="EstimateType" value="overwrite"/>
+                    <b>Redo All</b>  Overwrite ALL existing unit costs<br/>
+                    <span class="meta">(NOTE: this is irreversible, better be sure)</span>
+                </label>
+            </p>
+        </div>
+        
+        <div id="estimate_window_content_success" style="min-height: 200px">
+            <div class="alert alert-success mbn">
+                Model version {{name}} has been estimated successfully.
+            </div>
+        </div>
+    
+        <div id="estimate_window_content_error" style="min-height: 200px">
+            <div class="alert alert-error mbn">
+                There was a problem estimating model version {{name}} with the current Assembly Code costing catalog. 
+                Please check the file format uploaded at <a href="#Settings/Codes" id="estimate_window_project_settings">project settings</a>.
+            </div>
+        </div>
+
+        <div id="estimate_window_remaining" style="max-height:100px;overflow:auto;"></div>
+
+        <div id="estimate_window_content_audit"></div>
+    </div>
+</script>
+
+<script data-namespace="catalog.estimateWindowAudit" type="text/template">
+    {{#if audits.length}}
+        <p class="muted" id="show_estimate_window_audit_history_container">
+            Last run on this version by {{estimatedBy}}, {{formattedEstimatedOn}} (<a href="#" id="show_estimate_window_audit_history">see all</a>)
+        </p>
+    {{/if}}
+    
+    <div id="estimate_window_audit_history">
+            
+        {{#each audits}}
+            <div class="muted">{{this.estimatedBy}}, {{this.formattedEstimatedOn}}</div>
+        {{/each}}
+            
+    </div>
+</script>

@@ -1,0 +1,241 @@
+﻿.explorer-body {
+	overflow: hidden;
+	position: absolute;
+	top: 77px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.explorer .main-content {
+	position: absolute;
+	top: 0;
+	left: 325px;
+	background-color: #fff;
+	bottom: 0;
+	right: 0;
+	.box-shadow(0 -1px 6px rgba(0, 0, 0, .45));
+	.transition(left ease-out .2s);
+	padding: 0;
+	z-index: 100;
+	-webkit-tap-highlight-color: transparent;
+	overflow-y: auto;
+}
+
+#model_viewer {
+	width: 100%;
+	height: 100%;
+	&[data-layout=gridOnly], &[data-layout=twoScreen] {
+		#grid_pane {
+			height: 100% !important;
+			width: 100% !important;
+		}
+		#viewer_pane, .splitter-bar {
+			display: none;
+		}
+	}
+	&[data-layout=horizontalViewer] {
+		.splitter-pane {
+			width: 100%;
+		}
+	}
+	&[data-layout=verticalViewer] {
+		.splitter-pane {
+			height: 100%;
+		}
+	}
+	.splitter-bar {
+		background: #aaa;
+		z-index: 101;
+	}
+	.splitter-bar-horizontal {
+		height: 5px;
+	}
+	.splitter-bar-vertical {
+		width: 5px;
+	}
+}
+
+#grid_and_viewer {
+	position: absolute !important;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+	.box-shadow(0 -1px 6px rgba(0, 0, 0, .45));
+	-webkit-tap-highlight-color: transparent;
+}
+
+#grid_pane {
+	background-color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 0;
+	z-index: 50;
+}
+
+.explorer-details {
+	padding: 12px;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.takeoff-header {
+	padding-top: 9px;
+	padding-bottom: 6px;
+}
+
+.explorer .sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 240px;
+	background-color: #777;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#project_dashboard, #model_dashboard {
+	overflow: auto;
+}
+
+.explorer #left_sidebar {
+	width: 325px;
+	z-index: 99;
+}
+
+.sidebar-pane {
+	position: absolute;
+	background: #777 url("../images/layout/darkgreydiag.png") 0 0 repeat;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 325px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	.transition(left ease-out .2s);
+}
+
+#main_content {
+	overflow: visible;
+}
+
+#project_settings, #view_content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+}
+
+#project_settings {
+	z-index: 100;
+}
+
+#details_pane {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 350px;
+	overflow: hidden;
+	background-color: #fff;
+	z-index: 98;
+	border-left: 1px solid #ccc;
+	border-left-color: rgba(255, 255, 255, .75);
+	box-shadow: -1px 0px 1px rgba(0, 0, 0, .15);
+	.transition(left ease-out .35s);
+	.chunky-header {
+		height: 26px;
+		overflow: visible;
+	}
+	.details-body {
+		position: absolute;
+		top: 39px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	.empty-message {
+		margin-top: 30%;
+		text-align: center;
+	}
+}
+
+#toggle_sidebar {
+	.border-radius(3px 0 0 3px);
+	.box-shadow(-2px 0px 6px rgba(0,0,0,0.15));
+	background-color: #fff;
+	position: absolute;
+	left: 0px;
+	bottom: 18px;
+	height: 40px;
+	width: 13px;
+	z-index: 99;
+	margin-left: -19px;
+	padding: 3px;
+	cursor: pointer;
+	i {
+		position: absolute;
+		top: 50%;
+		margin-top: -8px;
+		opacity: .8;
+	}
+	&:hover i {
+		opacity: 1;
+	}
+}
+
+.chunky-header {
+	.gradientBar(#f5f5f5, #ddd);
+	border-bottom: 1px solid #bbb;
+	.box-shadow(0 1px 1px rgba(255, 255, 255, .45));
+}
+
+/* edit links */
+.single-version {
+	.row-type-instance, .row-type-item, .row-type-group {
+		[aria-describedby="TakeoffGrid_AssembleName"] > span {
+			padding-right: 18px;
+		}
+
+		[aria-describedby="TakeoffGrid_AssembleName"] > span:hover {
+			text-decoration: underline;
+			background: transparent url(../images/icons/14/right-arrow-sign.png) right 2px no-repeat;
+		}
+
+	}
+}
+
+.ipad .single-version [aria-describedby="TakeoffGrid_AssembleName"] .cell-wrapper {
+	text-decoration: underline;
+}
+
+#assemble_peeps_toolbar {
+	position: fixed;
+	bottom: 30px;
+	left: 0;
+	margin-left: -240px;
+	width: 250px;
+	.opacity(30);
+	background-color: #222;
+	border: 1px solid #111;
+	.border-radius(6px);
+	.box-shadow(0 2px 4px rgba(0, 0, 0, .45));
+	.transition(all .15s ease-out);
+	p {font-size: 1px !important; font-weight: bold;}
+	&:hover {
+		color: #666;
+		margin-left: -10px;
+		padding: 6px 6px 10px 12px;
+		.opacity(100);
+		p {font-size: 10px !important;}
+	}
+}

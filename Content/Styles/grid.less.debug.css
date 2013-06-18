@@ -1,0 +1,278 @@
+﻿.ui-jqgrid {
+  font-size: 13px;
+  border-color: #dddddd;
+}
+.ui-jqgrid .ui-jqgrid-btable .row-type-group {
+  cursor: pointer;
+}
+.ui-jqgrid .ui-jqgrid-btable .row-type-item {
+  cursor: pointer;
+}
+.ui-jqgrid .ui-jqgrid-btable .row-type-instance {
+  cursor: pointer;
+}
+.ui-jqgrid .ui-jqgrid-resize-ltr {
+  margin-right: -8px;
+  margin-left: -4px;
+  margin-top: -4px;
+}
+.ui-jqgrid tr.jqgrow td {
+  border-bottom-color: #dddddd;
+}
+.ui-jqgrid tr.jqgroup td {
+  border-bottom-color: #dddddd;
+}
+.ui-jqgrid tr.jqfoot td {
+  border-bottom-color: #dddddd;
+}
+.ui-jqgrid tr.ui-row-ltr td {
+  border-right-color: #dddddd;
+}
+.ui-jqgrid tr.ui-row-rtl td {
+  border-left-color: #dddddd;
+}
+.ui-jqgrid .ui-jqgrid-htable,
+.ui-jqgrid .ui-jqgrid-btable {
+  background-color: white;
+  border-collapse: separate;
+}
+.ui-jqgrid .ui-jqgrid-htable th div,
+.ui-jqgrid .ui-jqgrid-btable th div {
+  text-align: left;
+}
+.ui-jqgrid .ui-jqgrid-htable th,
+.ui-jqgrid .ui-jqgrid-btable th,
+.ui-jqgrid .ui-jqgrid-htable td,
+.ui-jqgrid .ui-jqgrid-btable td {
+  line-height: 18px;
+  text-align: left;
+  border-color: #d9d9d9;
+}
+.ui-jqgrid .ui-jqgrid-htable th,
+.ui-jqgrid .ui-jqgrid-btable th {
+  font-weight: bold;
+}
+.ui-jqgrid-htable th {
+  border-bottom: 1px solid #dddddd;
+}
+.ui-jqgrid .ui-jqgrid-htable .jqg-first-row-header th {
+  height: 0px;
+  line-height: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.ui-jqgrid .ui-jqgrid-btable tr th,
+.ui-jqgrid .ui-jqgrid-htable tr th,
+.ui-jqgrid .ui-jqgrid-btable tr td,
+.ui-jqgrid .ui-jqgrid-htable tr td {
+  padding: 4px 8px;
+  /*padding: 4px 5px;*/
+
+}
+.ui-jqgrid-btable,
+.ui-jqgrid-htable {
+  border: 1px solid #dddddd;
+}
+.ui-jqgrid-btable tbody:first-child tr:first-child td,
+.ui-jqgrid-htable tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+.ui-jqgrid-btable .jqgfirstrow td {
+  border-color: #dddddd;
+}
+.ui-jqgrid-btable {
+  border-width: 0;
+}
+.ui-jqgrid-btable td {
+  background-color: white;
+}
+.ui-jqgrid-htable {
+  border: 1px solid #dddddd;
+  border-width: 1px 0 1px 0;
+}
+.ui-jqgrid .ui-jqgrid-htable th {
+  background-color: #efefef;
+  border-right: 1px solid #dddddd;
+}
+.ui-jqgrid .ui-jqgrid-btable .jqgfirstrow td {
+  height: 0;
+  padding: 0 8px;
+}
+#takeoff_grid_container {
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+  background-color: #efefef;
+}
+/* row types */
+
+.row-type-group td {
+  background-color: whitesmoke;
+}
+.row-type-detail td {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 11px;
+}
+.row-type-detail td[aria-describedby="TakeoffGrid_AssembleName"] {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.row-type-detail td[aria-describedby="TakeoffGrid_AssembleName"] > span {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.row-type-detail td input[type="checkbox"] {
+  display: none;
+}
+/* property types */
+
+.ui-jqgrid tr.row-type-item .instance-prop,
+.ui-jqgrid tr.row-type-group .instance-prop {
+  font-weight: bold;
+}
+.row-type-instance .type-prop {
+  color: #999999;
+}
+/* row selection */
+
+.sel-yes td {
+  background-color: #faf3d1;
+}
+.sel-yes.current-row td {
+  background-color: #f7eebf;
+}
+/* variance */
+
+.ui-jqgrid-view .variance-positive {
+  color: #468847;
+}
+.ui-jqgrid-view .variance-negative {
+  color: #b94a48;
+}
+.ui-jqgrid-view .sel-yes td.variance-positive {
+  background-color: #468847;
+  color: white;
+}
+.ui-jqgrid-view .sel-yes td.variance-negative {
+  background-color: #b94a48;
+  color: white;
+}
+.version-comparison .ui-widget-content [aria-describedby=TakeoffGrid_Variance],
+.version-comparison .ui-widget-content [aria-describedby=TakeoffGrid_TotalCost] {
+  font-weight: bold;
+}
+/* expand/collapse triangle */
+
+.ui-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("Grid/Images/ui-icons_222222_256x240.png");
+}
+.ui-icon-triangle-1-e {
+  background-position: -32px -16px;
+}
+.ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+/* sorting icons */
+
+/*
+ui-grid-ico-sort ui-icon-desc ui-icon ui-icon-triangle-1-s ui-sort-ltr ui-state-disabled
+ui-grid-ico-sort ui-icon-asc ui-icon ui-icon-triangle-1-n ui-sort-ltr
+*/
+
+.ui-grid-ico-sort.ui-icon-asc,
+.ui-grid-ico-sort.ui-icon-desc {
+  margin-top: 2px;
+}
+.ui-grid-ico-sort.ui-icon-triangle-1-n {
+  background-position: 0 -16px;
+}
+.ui-grid-ico-sort.ui-icon-triangle-1-s {
+  background-position: -65px -16px;
+}
+.ui-grid-ico-sort.ui-state-disabled {
+  display: none;
+}
+.ui-jqgrid .row-type-detail .ui-icon {
+  background: transparent none 2px 3px no-repeat;
+}
+.ui-jqgrid .row-type-detail.active-takeoff-quantity td {
+  font-weight: bold;
+}
+/* checkbox states */
+
+.fake-checkbox {
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  margin-top: 5px;
+  background: transparent url(../images/sprites/checkbox-states-default.png) 0 0 no-repeat;
+}
+.sel-yes .fake-checkbox {
+  background-position: -16px 0;
+}
+.sel-partial .fake-checkbox {
+  background-position: -32px 0;
+}
+.row-type-detail .fake-checkbox {
+  display: none;
+}
+.bottom-toolbar {
+  background-color: #e8e8e8;
+  background-image: -moz-linear-gradient(top, #efefef, #dddddd);
+  background-image: -ms-linear-gradient(top, #efefef, #dddddd);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#efefef), to(#dddddd));
+  background-image: -webkit-linear-gradient(top, #efefef, #dddddd);
+  background-image: -o-linear-gradient(top, #efefef, #dddddd);
+  background-image: linear-gradient(top, #efefef, #dddddd);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#dddddd', GradientType=0);
+  border-color: #dddddd #dddddd #b7b7b7;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: -1px 0 1px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: -1px 0 1px rgba(0, 0, 0, 0.45);
+  box-shadow: -1px 0 1px rgba(0, 0, 0, 0.45);
+  border-top: 1px solid #bbbbbb;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 21px;
+  padding: 4px 6px;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+/* stuff we don't need */
+
+.ui-icon-radio-off {
+  background: none;
+}
+.ui-jqgrid-pager,
+.ui-jqgrid .loading {
+  display: none !important;
+}
+/* touch-specific */
+
+.touch .ui-jqgrid-resize {
+  display: inline-block;
+  background: none;
+  width: 20px;
+}
+/* grid selection header */
+
+.ui-jqgrid-view .selection-toggle {
+  text-align: center;
+  vertical-align: middle;
+}
+/* darker grouping of columns */
+
+.grouped-columns #TakeoffGrid_AssembleName,
+.grouped-columns [aria-describedby="TakeoffGrid_AssembleName"],
+.grouped-columns .group-edge {
+  border-right-color: #bbbbbb !important;
+}

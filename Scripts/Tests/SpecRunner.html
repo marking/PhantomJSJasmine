@@ -1,0 +1,127 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Assemble Systems WebClient JavaScript Tests - Jasmine Spec Runner</title>
+
+    <link rel="shortcut icon" type="image/png" href="../../Content/jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="../../Content/jasmine/jasmine.css">
+    <link href="../DynaTree/themes/assemble/ui.dynatree.css" rel="stylesheet" />
+
+    <!-- testing frameworks -->
+    <script type="text/javascript" src="../jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="../jasmine/jasmine-html.js"></script>
+        <script src="../sinon/sinon-1.6.0.js" type="text/javascript"></script>
+
+    <!-- some needed libraries -->
+    <script src="../modernizr-2.5.3.js" type="text/javascript"></script>
+    <script src="../jquery-1.7.1.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../jasmine-jquery.js"></script>
+    <script src="../jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
+    <script src="../jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    <script src="../underscore-min.js" type="text/javascript"></script>
+    <script src="../backbone-min.js" type="text/javascript"></script>
+    <script src="../handlebars.js" type="text/javascript"></script>
+    <script src="../linq.js" type="text/javascript"></script>
+    <script src="../DynaTree/jquery.dynatree-1.2.2.js" type="text/javascript"></script>
+
+    <script src="../Bootstrap/assemble.bootstrap-dropdown.js" type="text/javascript"></script>
+    <script src="../Bootstrap/bootstrap-typeahead.js" type="text/javascript"></script>
+    <script src="../Bootstrap/bootstrap-button.js" type="text/javascript"></script>
+    <script src="../Bootstrap/bootstrap-collapse.js" type="text/javascript"></script>
+    <script src="../Bootstrap/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="../Bootstrap/bootstrap-tab.js" type="text/javascript"></script>
+    <script src="../Bootstrap/bootstrap-tooltip.js" type="text/javascript"></script>
+        <script src="../Bootstrap/bootstrap-popover.js" type="text/javascript"></script>
+
+    <script src="../form2object.js" type="text/javascript"></script>
+    <script src="../jquery.toObject.js" type="text/javascript"></script>
+    <script src="../json2.js" type="text/javascript"></script>
+    <script src="../sessionstorage.1.4.js" type="text/javascript"></script>    
+    <script src="../gl-matrix.js" type="text/javascript"></script>
+
+    <!-- include source files here... -->
+
+    <script src="../Assemble/assemble.js" type="text/javascript"></script>
+    <script src="../Assemble/assemble.storage.js" type="text/javascript"></script>
+    <script src="../Assemble/assemble.grid.js" type="text/javascript"></script>
+    <script src="../Assemble/assemble.models.js" type="text/javascript"></script>
+    <script src="../Assemble/assemble.help.js" type="text/javascript"></script>
+    <script src="../Assemble/assemble.groupby.js" type="text/javascript"></script>
+    <script src="../Assemble/assemble.details.js" type="text/javascript"></script>
+    <script src="../Assemble/assemble.dropdowns.js" type="text/javascript"></script>
+    <script src="../Assemble/assemble.trees.js" type="text/javascript"></script>
+    <script src="../Assemble/assemble.views.js" type="text/javascript"></script>
+    <script src="../Assemble/assemble.projectSettings.js" type="text/javascript"></script>
+    <script src="../Assemble/Viewer/assemble.connection.js" type="text/javascript"></script>
+    <script src="../Assemble/Viewer/assemble.parser.js" type="text/javascript"></script>
+    <script src="../Assemble/Viewer/assemble.picker.js" type="text/javascript"></script>
+    <script src="../Assemble/Viewer/assemble.viewer.js" type="text/javascript"></script>
+        <script src="../Assemble/assemble.models.js" type="text/javascript"></script>
+        <script src="../Assemble/assemble.versions.js" type="text/javascript"></script>
+<script src="../Assemble/assemble.columns.js" type="text/javascript"></script>
+<script src="../Assemble/assemble.catalog.js" type="text/javascript"></script>
+    <script src="../Assemble/Viewer/assemble.materials.js" type="text/javascript"></script>
+
+    <!-- Helpers here -->
+    <script src="SpecHelper.js" type="text/javascript"></script>
+
+    <!-- include spec files here... these are the fixures -->        
+    <script src="assemble.tests.js" type="text/javascript"></script>
+    <script src="assemble.storage.tests.js" type="text/javascript"></script>
+        <script src="assemble.models.tests.js" type="text/javascript"></script>
+    <script src="assemble.help.tests.js" type="text/javascript"></script>
+    <script src="assemble.dropdowns.tests.js" type="text/javascript"></script>
+    <script src="assemble.grid.tests.js" type="text/javascript"></script>
+    <script src="assemble.views.tests.js" type="text/javascript"></script>
+    <script src="assemble.grid.tests.js" type="text/javascript"></script>
+    <script src="assemble.groupby.tests.js" type="text/javascript"></script>
+    <script src="assemble.views.tests.js" type="text/javascript"></script>
+    <script src="assemble.details.tests.js" type="text/javascript"></script>    
+    <script src="assemble.projectSettings.tests.js" type="text/javascript"></script>
+    <script src="assemble.trees.tests.js" type="text/javascript"></script>    
+    <script src="assemble.connection.tests.js" type="text/javascript"></script>
+    <script src="assemble.columns.tests.js" type="text/javascript"></script>
+    <script src="assemble.catalog.tests.js" type="text/javascript"></script>
+    <!--
+        WIP:
+        <script src="assemble.parser.tests.js" type="text/javascript"></script>    
+        <script src="assemble.viewer.tests.js" type="text/javascript"></script>
+    -->
+
+    <script type="text/javascript">
+        (function () {
+            var jasmineEnv = jasmine.getEnv();
+            jasmineEnv.updateInterval = 1000;
+
+            var htmlReporter = new jasmine.HtmlReporter();
+
+            jasmineEnv.addReporter(htmlReporter);
+
+            jasmineEnv.specFilter = function (spec) {
+                return htmlReporter.specFilter(spec);
+            };
+
+            var currentWindowOnload = window.onload;
+
+            window.onload = function () {
+                if (currentWindowOnload) {
+                    currentWindowOnload();
+                }
+                execJasmine();
+            };
+
+            function execJasmine() {
+                jasmineEnv.execute();
+            }
+
+        })();
+        </script>
+
+</head>
+
+<body>
+</body>
+
+</html>

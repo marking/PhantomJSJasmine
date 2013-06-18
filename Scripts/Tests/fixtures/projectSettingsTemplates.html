@@ -1,0 +1,58 @@
+﻿<script data-namespace="projectSettings.codes" type="text/template">
+    <div class="content-box minh-500 max-700">
+        <div class="clearfix">
+            <h2 class="mbm pull-left">Assembly Codes</h2>
+            <div class="pull-right mtm mll">
+                <a href="javascript:void(0)" id="ImportAssemblyTree"><i class="icon-blue icon-upload mrs"></i>Import&hellip;</a>
+                <a href="javascript:void(0)" id="RevertAssemblyTree"><i class="icon-blue icon-revert mrs"></i>Revert to default</a>
+            </div>
+        </div>
+        
+        <div class="assembly-tree-host" style="height:350px">
+        </div>
+
+        <p class="mtxs">
+            <span id="AssemblyFileDescription">{{FileDescription}}</span> <a href="#" id="AssemblyCodeFileDownload">Export&hellip;</a>
+        </p>
+    </div>
+</script>
+
+<script data-namespace="projectSettings.codesDownloadModal" type="text/template">
+    <div id="codes_download_modal_content">
+        <div>
+            <form id="AssemblyFileDownloadForm">                   
+                <p>
+                    <h4>Download Format</h4>
+                    <input type="radio" name="DownloadFormat" value="text" checked="checked"/> Uniformat Classifications text file for Revit<br/>
+                    <input type="radio" name="DownloadFormat" value="excel"/> Excel Spreadsheet inlcuding Unit Costs
+                </p>
+            </form>
+        </div>
+    </div>
+</script>
+
+<script data-namespace="projectSettings.codesUploadModal" type="text/template">
+    <div id="codes_upload_modal_content">
+        <h1>Import an Assembly Code Tree</h1>
+        <p>
+            To upload a new Assemlby Code Tree for this project browse for a standard, tab-delimited Uniformat file for upload.  
+            If you are unhappy with the file you can always upload a new version in the future, or revert to the default Assemble Systems version.
+        </p>
+        <div class="assembly-code-part assembly-code-part-browse">
+            <form id="AssemblyFileUploadForm" method="post" enctype="multipart/form-data">
+                <input type="text" name="AssemblyFile" class="assembly-file"/>
+                <input type="hidden" name="ProjectId" />
+                <iframe id="AssemblyFileUploadTarget" name="AssemblyFileUploadTarget" src="" style="width:0;height:0;border:0px;"></iframe>
+            </form>
+        </div>
+        <div class="assembly-code-part assembly-code-part-uploading">
+            Uploading new file...
+        </div>
+        <div class="assembly-code-part assembly-code-part-sucess">
+            New file uploaded successfully.
+        </div>
+        <div class="assembly-code-part assembly-code-part-error">
+            There was an error with the file upload.  Please check that the file is a valid format.
+        </div>
+    </div>
+</script>

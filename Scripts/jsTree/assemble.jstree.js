@@ -1,0 +1,1 @@
+﻿$.jstree._themes = "/Scripts/jsTree/themes/";

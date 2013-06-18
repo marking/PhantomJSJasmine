@@ -1,0 +1,54 @@
+/*
+ * jsTree assemble theme 1.0
+ * Supported features: dots/no-dots, icons/no-icons, focused, loading
+ * Supported plugins: ui (hovered, clicked), checkbox, contextmenu, search
+*/
+
+.jstree-container {
+    height: 250px;
+    overflow: auto;
+}
+
+.jstree-assemble li,
+.jstree-assemble ins { background-image:url("d.png"); background-repeat:no-repeat; background-color:transparent;font-size: 13px;}
+.jstree-assemble li { background-position:-90px 0; background-repeat:repeat-y; }
+.jstree-assemble li.jstree-last { background:transparent; }
+.jstree-assemble .jstree-open > ins { background-position:-72px 0;cursor: pointer; }
+.jstree-assemble .jstree-closed > ins { background-position:-54px 0;cursor: pointer; }
+.jstree-assemble .jstree-leaf > ins { background-position:-36px 0;cursor: default; }
+.jstree-assemble [data-selectable=false] > a > .jstree-checkbox { display: none; }
+.jstree-assemble [data-type=header] > a { font-weight: bold; }
+
+.jstree-assemble a { border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; cursor: default;padding: 3px 2px;}
+.jstree-assemble a .jstree-icon { background-position:-56px -20px; }
+.jstree-assemble a.jstree-loading .jstree-icon { background:url("throbber.gif") center center no-repeat !important; }
+
+.jstree-assemble .jstree-no-dots li,
+.jstree-assemble .jstree-no-dots .jstree-leaf > ins { background:transparent; }
+.jstree-assemble .jstree-no-dots .jstree-open > ins { background-position:-18px 0; }
+.jstree-assemble .jstree-no-dots .jstree-closed > ins { background-position:0 0; }
+
+.jstree-assemble .jstree-no-icons a .jstree-icon { display:none; }
+
+.jstree-assemble .jstree-search { font-style:italic; }
+
+.jstree-assemble .jstree-no-icons .jstree-checkbox { display:inline-block; }
+.jstree-assemble .jstree-no-checkboxes .jstree-checkbox { display:none !important; }
+.jstree-assemble .jstree-checked > a > .jstree-checkbox { background-position:-38px -19px; }
+.jstree-assemble .jstree-unchecked > a > .jstree-checkbox { background-position:-2px -19px; }
+.jstree-assemble .jstree-undetermined > a > .jstree-checkbox { background-position:-20px -19px; }
+
+#vakata-dragged.jstree-assemble ins { background:transparent !important; }
+#vakata-dragged.jstree-assemble .jstree-ok { background:url("d.png") -2px -53px no-repeat !important; }
+#vakata-dragged.jstree-assemble .jstree-invalid { background:url("d.png") -18px -53px no-repeat !important; }
+#jstree-marker.jstree-assemble { background:url("d.png") -41px -57px no-repeat !important; text-indent:-100px; }
+
+.jstree-assemble a.jstree-search { color:aqua; }
+.jstree-assemble .jstree-locked a { color:silver; cursor:default; }
+
+#vakata-contextmenu.jstree-assemble-context, 
+#vakata-contextmenu.jstree-assemble-context li ul { background:#f0f0f0; border:1px solid #979797; -moz-box-shadow: 1px 1px 2px #999; -webkit-box-shadow: 1px 1px 2px #999; box-shadow: 1px 1px 2px #999; }
+#vakata-contextmenu.jstree-assemble-context a { color:black; }
+#vakata-contextmenu.jstree-assemble-context li.jstree-contextmenu-disabled a { color:silver; background:transparent; border:0; padding:1px 4px; }
+#vakata-contextmenu.jstree-assemble-context li.vakata-separator { background:white; border-top:1px solid #e0e0e0; margin:0; }
+#vakata-contextmenu.jstree-assemble-context li ul { margin-left:-4px; }

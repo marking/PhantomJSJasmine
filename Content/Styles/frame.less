@@ -1,0 +1,157 @@
+﻿body {
+    margin: 0;
+	background: #efefef url("../images/layout/greydiag.png") 0 0 repeat;
+}
+
+/* layout */
+#sidebar {
+    float: left;
+    width: 240px;
+}
+
+#main, .main-with-left-sidebar {
+    margin-left: 240px;
+}
+
+#left_sidebar, .left-sidebar {
+    width: 240px;
+    float: left;
+}
+
+.error-page {
+	background-color: #fff;
+	background-image: none;
+	text-align: center;
+}
+
+.alert {
+	padding-right: 14px;
+}
+
+.environment-alert {
+	.border-radius(0);
+	.box-shadow(0 0 6px rgba(0, 0, 0, .25));
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.content-header {
+    padding: 10px 10px 20px 0;
+}
+
+.content-only .main-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.content-with-sidebar .main-content {
+    margin: 10px 10px 0 240px;
+    padding-left: 0;
+    padding-right: 20px;
+    min-width: 500px;
+}
+
+.max-size {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.grey-diag {
+	background: #efefef url("../images/layout/greydiag.png") 0 0 repeat;
+}
+
+/* nav (Bootstrap overrides) */
+.navbar {
+	position: relative;
+	width: 100%;
+    margin-bottom: 0;
+}
+
+.navbar-inner {
+    padding-left: 10px;
+    padding-right: 0px;
+    height: 40px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav > li > a {
+    line-height: normal;
+    padding-top: 14px;
+    padding-bottom: 6px;
+    color: #aaa;
+}
+
+.nav-list .active > a:hover {
+    background-color: #08c
+}
+
+.navbar .brand {
+    padding-top: 9px;
+    padding-bottom: 0;
+}
+
+/* status message at top */
+#status_message {
+    position: fixed;
+    top: 0px;
+    height: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#status_message .alert {
+    max-width: 350px;
+    position: relative;
+    display: inline-block;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+    z-index: @zindexModalBackdrop - 1;
+	padding: 10px;
+}
+
+.no-boxshadow #global_message .alert-message {
+    border-color: #C09853;
+}
+
+/* hacks for footer-ness */
+html, body.content-only {
+	height: 100%;
+}
+
+#outer_container {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin-bottom: -26px;
+}
+
+.copyright, .push {
+	height: 20px;
+	clear: both;
+}
+
+.copyright {
+	color: #999;
+	font-size: 11px;
+	text-align: center;
+	margin-bottom: 6px;
+}
+
+.bottomize {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}

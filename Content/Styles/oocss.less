@@ -1,0 +1,86 @@
+﻿/*
+Copyright (c) 2009, Nicole Sullivan. All rights reserved.
+Code licensed under the BSD License:
+version: 0.2
+*/
+/* **************** BLOCK STRUCTURES ***************** */
+/* mod */
+.mod{margin:10px;}
+.mod .inner{/*background: url(skin/transparent.png) repeat left top;*/}
+.bd,.ft, .hd{overflow:hidden; *overflow:visible; zoom:1;}
+b.top, b.top b, b.bottom, b.bottom b{display:block;background-repeat:no-repeat;font-size:1%;position:relative;z-index:10;}
+.tl, .tr, .bl, .br{height:10px; width:10px;float:left;}
+.tl{background-position: left top;}
+.tr{background-position: right top;}
+.bl{background-position: left bottom;}
+.br{background-position: right bottom;}
+.br,.tr{float:right;}
+.tr, .tl{overflow:hidden;margin-bottom:-32000px;}/* margin bottom needs to be < -9px */
+.bl,.br{margin-top:-10px;}
+.top{background-position:center top;}
+.bottom{background-position:center bottom;_zoom:1;}/* this zoom required for IE5.5 only*/
+/* complex */
+.complex{overflow:hidden;*position:relative;*zoom:1;}/* position/zoom required for IE7, 6, 5.5 */
+.complex .tl, .complex .tr{height:32000px; margin-bottom:-32000px;width:10px;}
+.complex .bl, .complex .br{/*margin-top:0;*/}
+.complex .top{height:5px;}
+.complex .bottom{height:5px;/*margin-top:-10px;*/}
+/* pop */
+.pop{overflow:visible;margin: 10px 20px 20px 10px; background-position:left top;}
+.pop .inner{right:-10px; bottom:-10px; background-position:right bottom;padding:0 10px 10px 0;}
+.pop .tl, .pop .br{display:none;}
+.pop .bl{bottom:-10px;}
+.pop .tr{float:right;margin-right:-10px;_display:inline; /*fix double margin bug*/ }
+
+/* ====== media (requires mod.css) ====== */
+.media{overflow:hidden;*overflow:visible;zoom:1;}
+.media .img{float:left;/*margin-right: 10px;*/}
+.media .img img{display:block;}
+.media .imgExt{float:right; /*margin-left: 10px;*/}
+
+/* spacing helpers
+p,m = padding,margin
+a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
+s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
+*/
+
+.ptn,.pvn,.pan{padding-top:0px !important}
+.pts,.pvs,.pas{padding-top:6px !important}
+.ptxs,.pvxs,.paxs{padding-top:3px !important}
+.ptm,.pvm,.pam{padding-top:12px !important}
+.ptl,.pvl,.pal{padding-top:20px !important}
+.prn,.phn,.pan{padding-right:0px !important}
+.prs,.phs,.pas{padding-right:6px !important}
+.prxs,.phxs,.paxs{padding-right:3px !important}
+.prm,.phm,.pam{padding-right:12px !important}
+.prl,.phl,.pal{padding-right:20px !important}
+.pbn,.pvn,.pan{padding-bottom:0px !important}  
+.pbs,.pvs,.pas{padding-bottom:6px !important}
+.pbxs,.pvxs,.paxs{padding-bottom:3px !important}
+.pbm,.pvm,.pam{padding-bottom:12px !important}
+.pbl,.pvl,.pal{padding-bottom:20px !important}
+.pln,.phn,.pan{padding-left:0px !important}
+.pls,.phs,.pas{padding-left:6px !important}
+.plxs,.phxs,.paxs{padding-left:3px !important}
+.plm,.phm,.pam{padding-left:12px !important}
+.pll,.phl,.pal{padding-left:20px !important}
+.mtn,.mvn,.man{margin-top:0px !important}
+.mts,.mvs,.mas{margin-top:6px !important}
+.mtxs,.mvxs,.maxs{margin-top:3px !important}
+.mtm,.mvm,.mam{margin-top:12px !important}
+.mtl,.mvl,.mal{margin-top:20px !important}
+.mrn,.mhn,.man{margin-right:0px !important}
+.mrs,.mhs,.mas{margin-right:6px !important}
+.mrxs,.mhxs,.maxs{margin-right:3px !important}
+.mrm,.mhm,.mam{margin-right:12px !important}
+.mrl,.mhl,.mal{margin-right:20px !important}
+.mbn,.mvn,.man{margin-bottom:0px !important}  
+.mbs,.mvs,.mas{margin-bottom:6px !important}
+.mbxs,.mvxs,.maxs{margin-bottom:3px !important}
+.mbm,.mvm,.mam{margin-bottom:12px !important}
+.mbl,.mvl,.mal{margin-bottom:20px !important}
+.mln,.mhn,.man{margin-left:0px !important}
+.mls,.mhs,.mas{margin-left:6px !important}
+.mlxs,.mhxs,.maxs{margin-left:3px !important}
+.mlm,.mhm,.mam{margin-left:12px !important}
+.mll,.mhl,.mal{margin-left:20px !important}

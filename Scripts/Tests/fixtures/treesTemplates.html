@@ -1,0 +1,40 @@
+﻿<script data-namespace="trees.assembleCodeTree" type="text/template">
+    <div class="clearfix">
+        <div class="assembly-menu clearfix">
+            <form>
+                <div class="pull-left">
+                    <div class="search-box input-append">
+                        <input name="search" class="search-short" value="" placeholder="Search"><span class="add-on"><i class="icon-search"></i></span>
+                        <select name="filters" class="span2" />
+                    </div>
+                </div>
+
+                <div class="pull-right allow-out">
+                    <div class="btn-group">
+                        <a href="javascript:void(0)" class="btn btn-small expand-tree">
+                            <i class="icon-plus-sign mrxs"></i>
+                            Expand 
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-small collapse-tree">
+                            <i class="icon-minus-sign mrxs"></i>
+                            Collapse
+                        </a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div>
+            <div class="tree-host clearfix"></div>
+        </div>
+    </div>
+</script>
+
+<script data-namespace="trees.assemblyCodeTreeApplyCost" type="text/template">
+    <div id="assembly_code_tree_apply_cost" class="clearfix pull-left">
+        <label class="checkbox">
+            <input type="checkbox" name="apply_cost" checked="checked"/>
+            Apply Quantity and Unit Cost with Assembly Code
+        </label>
+    </div>
+</script>
