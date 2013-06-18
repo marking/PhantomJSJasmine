@@ -14,7 +14,7 @@
     <echo message="${datetime::now()} killing iisexpress"/>
     <kill pid="${iisexppid}"/>
     <echo message="${datetime::now()} running diff"/>
-    <exec program="diff.exe">
+    <exec program="C:\Users\marking\AppData\Local\GitHub\PortableGit_93e8418133eb85e81a81e5e19c272776524496c6\bin\diff.exe">
       <arg value="c:\temp\output.txt"></arg>
       <arg value="c:\temp\branch.txt"></arg>
     </exec>
