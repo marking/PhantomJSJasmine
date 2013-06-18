@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="LanuncTest" default="Launch" basedir="." xmlns="http://nant.sf.net/schemas/nant.xsd">
+<project name="LanuncTest" default="Launch" basedir=".." xmlns="http://nant.sf.net/schemas/nant.xsd">
 <property name="build.log.dir" value="c:\temp" />
 
   <target name="Launch" depends="init.logger">
