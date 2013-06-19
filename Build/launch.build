@@ -1,19 +1,18 @@
 <?xml version="1.0"?>
 <project name="LanuncTest" default="Launch" basedir=".." xmlns="http://nant.sf.net/schemas/nant.xsd">
-  <property name="build.log.dir" value="c:\temp" />
+  <property name="webroot" value="${teamcity.build.workingDir}" />
 
   <target name="Launch">
     <echo message="${datetime::now()} About to launch iis express"/>
     <exec spawn="true" program="C:\Program Files\IIS Express\iisexpress.exe" pidproperty="iisexppid">
-      <arg value="/path:c:\temp"></arg>
+      <arg value="/path:${webroot}"></arg>
       <arg value="/port:46000"></arg>
     </exec>
     <echo message="${datetime::now()} Launched"/>
-    <echo message="${datetime::now()} Attempting get"/>
-    <get dest="c:\temp\output.txt" src="http://localhost:46000/branch.txt"></get>
     <echo message="${datetime::now()} running phantomjs"/>
     <exec program="Tools\PhantomJS\phantomjs.exe">
-      <arg value="C:\Users\marking\Downloads\phantomjs-1.9.1-windows\phantomjs-1.9.1-windows\examples\printenv.js"></arg>
+      <arg value="${webroot}\Scripts\Tests\phantom.js"></arg>
+      <arg value="http://localhost:46000/Scripts/Tests/SpecRunner.html"></arg>
     </exec>
     <echo message="${datetime::now()} killing iisexpress"/>
     <kill pid="${iisexppid}"/>
