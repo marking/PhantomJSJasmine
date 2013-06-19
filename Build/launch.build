@@ -11,7 +11,8 @@
     <echo message="${datetime::now()} Launched"/>
     <echo message="${datetime::now()} running phantomjs"/>
     <exec program="Tools\PhantomJS\phantomjs.exe">
-      <arg value="${webroot}\Scripts\Tests\phantom.js"></arg>
+      <arg value="C:\users\marking\Downloads\phantomjs-1.9.1-windows\phantomjs-1.9.1-windows\examples\run-jasmine.js" />
+      <!-- arg value="${webroot}\Scripts\Tests\phantom.js"></arg -->
       <arg value="http://localhost:46000/Scripts/Tests/SpecRunner.html"></arg>
     </exec>
     <echo message="${datetime::now()} killing iisexpress"/>
