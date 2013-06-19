@@ -14,6 +14,6 @@ page.open(address, function (status) {
         window.setTimeout(function() {
             page.render('output.png');
             phantom.exit();
-        }, 200);
+        }, 2000);
     }
 });
