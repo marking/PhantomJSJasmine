@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <project name="LanuncTest" default="Launch" basedir=".." xmlns="http://nant.sf.net/schemas/nant.xsd">
-<property name="build.log.dir" value="c:\temp" />
+  <property name="build.log.dir" value="c:\temp" />
 
-  <target name="Launch" depends="init.logger">
+  <target name="Launch">
     <echo message="${datetime::now()} About to launch iis express"/>
     <exec spawn="true" program="C:\Program Files\IIS Express\iisexpress.exe" pidproperty="iisexppid">
       <arg value="/path:c:\temp"></arg>
@@ -11,31 +11,13 @@
     <echo message="${datetime::now()} Launched"/>
     <echo message="${datetime::now()} Attempting get"/>
     <get dest="c:\temp\output.txt" src="http://localhost:46000/branch.txt"></get>
-    <echo message="${datetime::now()} killing iisexpress"/>
-    <kill pid="${iisexppid}"/>
-    <echo message="${datetime::now()} running diff"/>
-    <exec program="C:\Users\marking\AppData\Local\GitHub\PortableGit_93e8418133eb85e81a81e5e19c272776524496c6\bin\diff.exe">
-      <arg value="c:\temp\output.txt"></arg>
-      <arg value="c:\temp\branch.txt"></arg>
+    <echo message="${datetime::now()} running phantomjs"/>
+    <exec program="Tools\PhantomJS\phantomjs.exe">
+      <arg value="C:\Users\marking\Downloads\phantomjs-1.9.1-windows\phantomjs-1.9.1-windows\examples\printenv.js"></arg>
     </exec>
+  <echo message="${datetime::now()} killing iisexpress"/>
+  <kill pid="${iisexppid}"/>
     <echo message="${datetime::now()} done"/>
   </target>
 
-  <target name="init.logger">
-    <property name="datetime.now" value="${datetime::now()}" />
-    <property name="datetime.day" value="${datetime::get-day(datetime.now)}" />
-    <property name="datetime.month" value="${datetime::get-month(datetime.now)}" />
-    <property name="datetime.year" value="${datetime::get-year(datetime.now)}" />
-    <property name="datetime.hour" value="${datetime::get-hour(datetime.now)}" />
-    <property name="datetime.minute" value="${datetime::get-minute(datetime.now)}" />
-    <property name="datetime.second" value="${datetime::get-second(datetime.now)}" />
-    <property name="datetime.millisecond" value="${datetime::get-millisecond(datetime.now)}" />
-
-    <property name="date.stamp.concat" value="${datetime.year}-${datetime.month}-${datetime.day}" />
-    <property name="time.stamp.concat" value="${datetime.hour}.${datetime.minute}.${datetime.second}" />
-    <property name="log.name" value="${build.log.dir}\NAntlog___${date.stamp.concat}_${time.stamp.concat}.log" />
-
-    <record name="${log.name}" action="Start" level="Debug" verbose="true" />
-    <echo message="Logging to ${log.name}." />
-</target>
 </project>

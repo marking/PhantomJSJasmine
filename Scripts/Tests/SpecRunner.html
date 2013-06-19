@@ -11,7 +11,9 @@
     <!-- testing frameworks -->
     <script type="text/javascript" src="../jasmine/jasmine.js"></script>
     <script type="text/javascript" src="../jasmine/jasmine-html.js"></script>
-        <script src="../sinon/sinon-1.6.0.js" type="text/javascript"></script>
+    <script src="../sinon/sinon-1.6.0.js" type="text/javascript"></script>
+    <script src="reporters/junit_reporter.js"></script>
+    <script src="reporters/teamcity_reporter.js"></script>
 
     <!-- some needed libraries -->
     <script src="../modernizr-2.5.3.js" type="text/javascript"></script>
@@ -93,11 +95,15 @@
     <script type="text/javascript">
         (function () {
             var jasmineEnv = jasmine.getEnv();
-            jasmineEnv.updateInterval = 1000;
+            //jasmineEnv.updateInterval = 1000;
 
             var htmlReporter = new jasmine.HtmlReporter();
+            var junitReporter = new jasmine.JUnitXmlReporter();
+            var teamcityReporter = new jasmine.TeamcityReporter();
 
             jasmineEnv.addReporter(htmlReporter);
+            //jasmineEnv.addReporter(junitReporter);
+            jasmineEnv.addReporter(teamcityReporter);
 
             jasmineEnv.specFilter = function (spec) {
                 return htmlReporter.specFilter(spec);
