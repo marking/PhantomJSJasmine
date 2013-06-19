@@ -17,20 +17,31 @@
     </exec>
     <echo message="${datetime::now()} killing iisexpress"/>
     <kill pid="${iisexppid}"/>
-    <script language="C#" prefix="util" >
-      <code>
-          <![CDATA[
-          public static void ScriptMain(Project project) 
-          {
-              foreach (DictionaryEntry entry in project.Properties)
-              {
-                  Console.WriteLine("{0}={1}", entry.Key, entry.Value);
-              }
-          }
-          ]]>
-      </code>
-    </script>
+
     <echo message="${datetime::now()} done"/>
   </target>
-
+  <script language="C#" prefix="util" >
+    <references>
+      <include name="System.dll" />
+    </references>
+    <imports>
+      <import namespace="System.Collections.Generic" />
+    </imports>
+    <code>
+      <![CDATA[
+        [Function("get-props")]
+        public static void ScriptMain(Project project) 
+        {
+            SortedDictionary<string, string> sorted = new SortedDictionary<string, string>();
+            foreach (DictionaryEntry entry in project.Properties){
+                sorted.Add((string)entry.Key, (string)entry.Value);
+            }
+            foreach (KeyValuePair<string, string> entry in sorted)
+            {
+                project.Log(Level.Info, "{0}={1}", entry.Key, entry.Value);
+            }
+        }
+        ]]>
+    </code>
+  </script>
 </project>
