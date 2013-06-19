@@ -15,8 +15,21 @@
     <exec program="Tools\PhantomJS\phantomjs.exe">
       <arg value="C:\Users\marking\Downloads\phantomjs-1.9.1-windows\phantomjs-1.9.1-windows\examples\printenv.js"></arg>
     </exec>
-  <echo message="${datetime::now()} killing iisexpress"/>
-  <kill pid="${iisexppid}"/>
+    <echo message="${datetime::now()} killing iisexpress"/>
+    <kill pid="${iisexppid}"/>
+    <script language="C#" prefix="util" >
+      <code>
+          <![CDATA[
+          public static void ScriptMain(Project project) 
+          {
+              foreach (DictionaryEntry entry in project.Properties)
+              {
+                  Console.WriteLine("{0}={1}", entry.Key, entry.Value);
+              }
+          }
+          ]]>
+      </code>
+    </script>
     <echo message="${datetime::now()} done"/>
   </target>
 
