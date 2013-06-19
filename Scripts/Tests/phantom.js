@@ -9,6 +9,7 @@ console.log("Executing ...");
 page.open(address, function (status) {
     if (status !== 'success') {
         console.log("Unable to load the address ...");
+        phantom.exit();
     } else {
 		console.log("Doing some stuff ...");
         window.setTimeout(function() {
