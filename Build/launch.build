@@ -37,7 +37,7 @@
       <arg value="${webroot}\Scripts\Tests\phantom.js"></arg>
       <arg value="http://localhost:${iisexpressport}/Scripts/Tests/SpecRunner.html"></arg>
     </exec>
-    <copy file="${directory.root}\jasmine.png" tofile="${directory.artifacts.jasmine}\jasmine.png}" verbose="true" />
+    <copy file="${directory.root}\jasmine.png" tofile="${directory.artifacts.jasmine}\jasmine.png" verbose="true" />
     <echo message="${datetime::now()} killing iisexpress"/>
     <kill pid="${iisexppid}"/>
 
