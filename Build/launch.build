@@ -1,54 +1,32 @@
 <?xml version="1.0"?>
 <project name="LanuncTest" default="Launch" basedir=".." xmlns="http://nant.sf.net/schemas/nant.xsd">
-  <script language="C#" prefix="util" >
-    <references>
-      <include name="System.dll" />
-    </references>
-    <imports>
-      <import namespace="System.Collections.Generic" />
-    </imports>
-    <code>
-      <![CDATA[
-        [Function("get-props")]
-        public static string ScriptMain(Project project) 
-        {
-            SortedDictionary<string, string> sorted = new SortedDictionary<string, string>();
-            foreach (DictionaryEntry entry in project.Properties){
-                sorted.Add((string)entry.Key, (string)entry.Value);
-            }
-            StringBuilder sb = new StringBuilder();
-            foreach (KeyValuePair<string, string> entry in sorted)
-            {
-                sb.AppendLine(String.Format("{0}={1}", entry.Key, entry.Value));
-            }
-            return sb.ToString();
-        }
-        ]]>
-    </code>
-  </script>
-  <script language="C#" prefix="util" >
-    <code>
-      <![CDATA[
-        [Function("get-random")]
-        public static void ScriptMain(Project project) 
-        {
-          Random rnd = new Random();
-          project.Properties.Add("iisexpressport", rnd.Next(46000, 47000).ToString());
-        }
-        ]]>
-    </code>
-  </script>
+  <!--
+  <property name="directory.artifacts" value="${directory.root}\Artifacts" />
+  <property name="directory.source" value="${directory.root}\Source" />
+  use build number as port number
+  -->
 
   <property name="webroot" value="${project::get-base-directory()}" />
   <if test="${property::exists('teamcity.build.workingDir')}">
     <property name="webroot" value="${teamcity.build.workingDir}" />
   </if>
+  <property name="directory.root" value="${project::get-base-directory()}" />
+  <property name="directory.artifacts" value="${directory.root}\Artifacts" />
+  <property name="directory.tools" value="${directory.root}\Tools" />
+  <property name="directory.artifacts.jasmine" value="${directory.artifacts}\Jasmine" />
+  <property name="IISExpress.Path" value="${environment::get-folder-path('ProgramFiles')}\IIS Express\iisexpress.exe" />
+  <property name="PhantomJS.Path" value="${directory.tools}\phantomjs.exe" />
 
-  <echo message="port is [${iisexpressport}]" />
+
+  <mkdir dir="${directory.artifacts.jasmine}" unless="${directory::exists(directory.artifacts.jasmine)}" verbose="true"/>
 
   <target name="Launch">
+    <loadtasks assembly="${directory.tools}\Assemble.NAnt.Tasks.dll"/>
+    <random type="int" minvalue="46000" maxvalue="47000" resultproperty="iisexpressport" />
+    <echo message="port is [${iisexpressport}]" />
+
     <echo message="${datetime::now()} About to launch iis express"/>
-    <exec spawn="true" program="C:\Program Files\IIS Express\iisexpress.exe" pidproperty="iisexppid">
+    <exec spawn="true" program="${IISExpress.Path}" pidproperty="iisexppid">
       <arg value="/path:${webroot}"></arg>
       <arg value="/port:${iisexpressport}"></arg>
     </exec>
@@ -59,6 +37,7 @@
       <arg value="${webroot}\Scripts\Tests\phantom.js"></arg>
       <arg value="http://localhost:${iisexpressport}/Scripts/Tests/SpecRunner.html"></arg>
     </exec>
+    <copy file="${directory.root}\jasmine.png" tofile="${directory.artifacts.jasmine}\jasmine.png}" verbose="true" />
     <echo message="${datetime::now()} killing iisexpress"/>
     <kill pid="${iisexppid}"/>
 

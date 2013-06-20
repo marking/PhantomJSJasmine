@@ -13,7 +13,7 @@ page.open(address, function (status) {
     } else {
 		console.log("Doing some stuff ...");
         window.setTimeout(function() {
-            page.render('output.png');
+            page.render('jasmine.png');
             phantom.exit();
         }, 3000);
     }
